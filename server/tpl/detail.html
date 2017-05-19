@@ -1,0 +1,133 @@
+<html>
+
+<head>
+	<style>
+		body {
+			font-size: 14px;
+			margin: 0;
+			padding: 0;
+			padding: 10px 25px;
+			color: #444;
+		}
+		
+		p,
+		li,
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		.back {
+			color: #444;
+			text-decoration: none;
+		}
+		
+		.back:hover {
+			text-decoration: underline;
+		}
+		
+		.red {
+			color: red;
+		}
+		
+		.blue {
+			color: blue;
+		}
+		
+		.code {
+			padding: 2px 5px;
+			border: 1px solid #ccc;
+			background: #f4f4f4;
+			border-radius: 2px;
+		}
+		
+		.li {
+			padding: 5px 0;
+		}
+		
+		.item {
+			padding: 10px 0px;
+		}
+		
+		.item:nth-of-type(1) {
+			border-bottom: 1px solid #ccc;
+		}
+		
+		.title {
+			padding: 0 5px;
+		}
+		
+		.block {
+			padding: 0 15px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+		
+		.dataarea textarea {
+			margin: 0 0.5% 0 0;
+			float: left;
+			width: 49%;
+		}
+		
+		.dataarea span {
+			display: block;
+			float: left;
+			width: 49%;
+			margin: 0 0.5% 0 0;
+			text-align: center;
+			padding: 5px 0;
+			background: #eee;
+			border-top: 1px solid #ccc;
+		}
+		
+		#data {
+			background: #eee;
+		}
+	</style>
+</head>
+
+<body>
+	<h1><a class="back" href="list"> &lt; API</a> <span class="code">{{ basePath }}{{ path }}</span></h1>
+	{% for p in pathData %}
+	<fieldset class="block">
+		<legend class="title">
+			<span class="red">{{ p.method }}</span> {% for consummer in p.consummers %} | {{ consummer }} {% endfor %}
+		</legend>
+		<div class="item">
+			<p class="li">Request Schema</p>
+			<ul>
+				{% for req in p.reqParam %}
+					{% if req.isSubmit == false %}
+					<li class="li">
+						<span class="code red">{{ req.name }}</span>
+						<span class="blue">{% if req.required %} required {% else %} optional {% endif %}</span>
+						<span>{{ req.type }}</span>
+					</li>
+					{% endif %}
+
+					{% if req.isSubmit == true %}
+					<p class="red">{{ req.ref }}</p>
+					<p class="code">{{ req.schemaJson|raw }}</p>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="item">
+			<form action="mock" method="post">
+				<p class="li">Response <span class="code red">{{ p.respParam.ref }}</span> <input type="submit" value="Save Mock Data"></p>
+				<p class="dataarea">
+					<span>Mock Data</span>
+					<span>API Data Example</span>
+					<textarea name="data" id="mockdata" cols="100" rows="50">{{p.mockData}}</textarea>
+					<textarea name="mockdata" readonly id="data" cols="100" rows="50">{{p.respInitData}}</textarea>
+				</p>
+				<input type="hidden" value="{{ path }}" name="path">
+				<input type="hidden" value="{{ p.method }}" name="method">
+			</form>
+		</div>
+	</fieldset>
+	{% endfor %}
+</body>
+
+</html>

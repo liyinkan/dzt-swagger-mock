@@ -1,0 +1,51 @@
+<html>
+
+<head>
+	<style>
+		body {
+			font-size: 14px;
+			margin: 0;
+			padding: 0;
+			padding: 10px 25px;
+			color: #444;
+		}
+		
+		p,
+		li,
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		.block {
+			padding: 5px;
+		}
+		
+		a {
+			color: #444;
+		}
+		
+		input {
+			padding: 5px;
+			width: 250px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>DZT Swagger Tool</h1>
+	<p class="block"><a href="list">View API List &gt;&gt;</a></p>
+	<p class="block"><input type="text" id="url" placeholder="Swagger JSON URL"> <a onclick="refreshSwagger()" id="refresh" href="javascript:void(0)">&gt;&gt; Refresh Swagger Definitions &lt;&lt;</a></p>
+	<script>
+		var refreshSwagger = function () {
+			var url = document.getElementById('url').value
+			if (!url || !url.trim()) {
+				return
+			}
+			window.location = 'refresh?url=' + url.trim()
+		}
+	</script>
+</body>
+
+</html>

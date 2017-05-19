@@ -1,0 +1,61 @@
+<html>
+
+<head>
+	<style>
+		body {
+			font-size: 14px;
+			margin: 0;
+			padding: 0;
+			padding: 10px 25px;
+			color: #444;
+		}
+		
+		p,
+		li,
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		.method {
+			color: red;
+		}
+		
+		.item {
+			padding: 2px 0;
+		}
+		
+		.api {
+			padding: 2px 0;
+		}
+		
+		.api a {
+			color: #444;
+		}
+		
+		.back {
+			color: #444;
+			text-decoration: none;
+		}
+		
+		.back:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+	<h1><a class="back" href="."> &lt; Path List</a></h1>
+	<h2>Base Path <span>{{ basePath }}</span></h2>
+	<table>
+		{% for p in paths %}
+		<tr class="item">
+			<td class="api"><a href="detail?path={{ loop.key }}">{{ loop.key }}</a></td>
+			<td><a href="detail?path={{ loop.key }}"> &gt;&gt; </a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+
+</html>
