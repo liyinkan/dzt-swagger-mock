@@ -1,0 +1,31 @@
+{
+  "name": "dzt-swagger-mock",
+  "version": "0.0.1",
+  "description": "a tool to mock data based on swagger",
+  "main": "server/server.js",
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-joi-router": "^5.0.0",
+    "koa-send": "^4.1.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liyinkan/dzt-swagger-mock.git"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "author": "Yinkan Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liyinkan/dzt-swagger-mock/issues"
+  },
+  "homepage": "https://github.com/liyinkan/dzt-swagger-mock#readme"
+}
