@@ -1,17 +1,18 @@
 # dzt swagger mock
-Aw mock tool based on swagger
+A tool to mock data based on swagger description
 
-# install
+# Install
 `npm install`
 
-# start
-
-`cd server`
-
+# Run
 `node server.js`
 
 # Documents
 No documents
+
+#Others
+This tool has not been finished.
+Pull requests are welcomed.
 
 # License
 MIT
