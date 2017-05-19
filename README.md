@@ -2,11 +2,16 @@
 Aw mock tool based on swagger
 
 # install
-`npm install --registry=https://registry.npm.taobao.org`
+`npm install`
 
 # start
+
 `cd server`
+
 `node server.js`
+
+# Documents
+No documents
 
 # License
 MIT
