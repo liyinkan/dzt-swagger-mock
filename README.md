@@ -1,5 +1,5 @@
-# dzt-swagger-mock
-mock tool based on swagger
+# dzt swagger mock
+A mock tool based on swagger
 
 #License
 MIT
