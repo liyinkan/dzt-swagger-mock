@@ -1,10 +1,10 @@
 # dzt swagger mock
 Aw mock tool based on swagger
 
-#install
+# install
 `npm install --registry=https://registry.npm.taobao.org`
 
-#start
+# start
 `cd server`
 `node server.js`
 
