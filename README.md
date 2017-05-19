@@ -10,7 +10,7 @@ A tool to mock data based on swagger description
 # Documents
 No documents
 
-#Others
+# Others
 This tool has not been finished.
 Pull requests are welcomed.
 
