@@ -1,6 +1,9 @@
 # dzt swagger mock
 A tool to mock data based on swagger description
 
+# Requirements
+Node version >= v7.6.0
+
 # Install
 `npm install`
 
