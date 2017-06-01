@@ -5,6 +5,7 @@ var fs = require('fs')
 var logger = require('../logger.js').getLogger('handle-data-reader')
 
 var getCurrentData = function (method, path) {
+	var path = path.split('?')[0]
 	var file = 'data' + path + '/' + method.toLowerCase() + '.json'
 	var res = null
 	logger.debug('Finding mock data: %s', file)
