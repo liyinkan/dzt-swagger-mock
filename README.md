@@ -10,6 +10,7 @@ Node version >= v7.6.0
 
 # Run
 `node server.js`
+`Navigate to '127.0.0.1:3000'`
 
 # Documents
 No documents
