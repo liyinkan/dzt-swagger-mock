@@ -51,3 +51,6 @@ server/data
 server/logs
 server/static
 server/swagger
+
+node_modules
+*.DS_Store
